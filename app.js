@@ -12,13 +12,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 var videos = [
-	// {
-	// 	name : "Brady",
-	// 	url : "//www.youtube.com/embed/g708PmJAbuI",
-	// 	title : "Deadpool v Boba Fett",
-	// 	description : "Two of the universes biggest mercenaries go head to head",
-	// 	votes : 0
-	// }
+	{
+		name : "Brady",
+		url : "//www.youtube.com/embed/g708PmJAbuI",
+		title : "Deadpool v Boba Fett",
+		description : "Two of the universes biggest mercenaries go head to head",
+		votes : 0
+	}
 ]
 
 // Routes \\
@@ -48,10 +48,10 @@ app.post("/api/videos", function(req, res){
 	res.send(videos)
 // Working on having the else show my ng-show.
 } else {
+	res.send("There can only be 8 videos submitted!")
 
 }
 })
-
 
 // Creating Server and Listening for Connections \\
 var port = 3000

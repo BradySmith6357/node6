@@ -9,14 +9,13 @@
 	<link rel="stylesheet" type="text/css" href="/html/main.css">
 </head>
 <body ng-controller="mainTroller">
-<h1>{{greeting}}</h1>
 <h2>Best Epic Rap Battle</h2>
 <div ng-show="subsfull">
 	<h1>Sorry! The contest is full. Please feel free to vote on the available videos</h1>
 </div>
 <form ng-submit="submitAVideo()">
 	<input ng-model="newVideo.name" placeholder="Your Name">
-	<input ng-model="newVideo.url" placeholder="URL to Youtube">
+	<input ng-model="newVideo.url" placeholder="Embeded YouTube url">
 	<input ng-model="newVideo.title" placeholder="Title of Video">
 	<input ng-model="newVideo.description" placeholder="Description">
 	<input type="submit">
