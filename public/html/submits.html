@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Submissions</title>
+</head>
+<body>
+	<div ng-show="subsfull">
+		<h1>Sorry! The contest is full. Please feel free to vote on the available videos</h1>
+	</div>
+	<div ng-repeat="video in videos">
+		<h2>{{video.name}} submitted {{video.title}}</h2>
+		<iframe width="560" height="315" src="{{$sce.trustAsResourceUrl(video.url)}}" frameborder="0" allowfullscreen></iframe>
+		<p>{{video.description}}</p>
+	</div>
+</body>
+</html>
