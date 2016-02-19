@@ -2,12 +2,18 @@
 <html ng-app="mainModule">
 <head>
 	<title>Contest App</title>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
 	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/html/main.css">
 </head>
 <body ng-controller="mainTroller">
 <h1>{{greeting}}</h1>
 <h2>Best Epic Rap Battle</h2>
+<div ng-show="subsfull">
+	<h1>Sorry! The contest is full. Please feel free to vote on the available videos</h1>
+</div>
 <form ng-submit="submitAVideo()">
 	<input ng-model="newVideo.name" placeholder="Your Name">
 	<input ng-model="newVideo.url" placeholder="URL to Youtube">
@@ -15,6 +21,7 @@
 	<input ng-model="newVideo.description" placeholder="Description">
 	<input type="submit">
 </form>
-<button><a href="/submits.html">View And Vote</a></button>
+	<button><a href="/submits.html">View And Vote</a></button>
+<!-- 	<button>View And Vote</a></button> -->
 </body>
 </html>

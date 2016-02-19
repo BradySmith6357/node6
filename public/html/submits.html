@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainModule">
 <head>
-	<title>Submissions</title>
+	<title>Contest App</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/html/main.css">
 </head>
-<body>
-	<div ng-show="subsfull">
-		<h1>Sorry! The contest is full. Please feel free to vote on the available videos</h1>
-	</div>
-	<div ng-repeat="video in videos">
-		<h2>{{video.name}} submitted {{video.title}}</h2>
+<body ng-controller="mainTroller">
+	<div ng-repeat="video in videos" class="container col-xs-5 layout">
+		<h2 class="col-xs-12 col-sm-12 col-m-6">{{video.name}} submitted {{video.title}}</h2>
 		<iframe width="560" height="315" src="{{$sce.trustAsResourceUrl(video.url)}}" frameborder="0" allowfullscreen></iframe>
 		<p>{{video.description}}</p>
+		<p>Votes = {{video.votes}}</p>
+		<button ng-click="addVote(video)">Vote For This Video</button>
+		<
+		<!-- <h1 class="col-xs-2">VS.</h1> -->
 	</div>
+	<!-- <div class="container">
+		<h1>VS.</h1>
+	</div> -->
 </body>
 </html>

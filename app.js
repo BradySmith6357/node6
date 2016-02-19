@@ -12,12 +12,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 var videos = [
-	{
-		name : "Brady",
-		url : "//www.youtube.com/embed/g708PmJAbuI",
-		title : "Deadpool v Boba Fett",
-		description : "Two of the universes biggest mercenaries go head to head"
-	}
+	// {
+	// 	name : "Brady",
+	// 	url : "//www.youtube.com/embed/g708PmJAbuI",
+	// 	title : "Deadpool v Boba Fett",
+	// 	description : "Two of the universes biggest mercenaries go head to head",
+	// 	votes : 0
+	// }
 ]
 
 // Routes \\
@@ -26,8 +27,8 @@ app.get("/", function(req, res){
 });
 
 // This should take user to subissions page
-app.post("/submits.html", function(req, res){
-	res.redirect("submits.html")
+app.get("/submits.html", function(req, res){
+	res.sendFile("submits.html", {root : __dirname + "/public/html"})
 })
 
 app.get("/api/videos", function(req, res){
@@ -40,7 +41,8 @@ app.post("/api/videos", function(req, res){
 		name: req.body.name,
 		url: req.body.url,
 		title: req.body.title,
-		description: req.body.description
+		description: req.body.description,
+		votes: 0
 	})
 
 	res.send(videos)
